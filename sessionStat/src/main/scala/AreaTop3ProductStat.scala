@@ -32,7 +32,7 @@ object AreaTop3ProductStat {
     })
     // 自定义去重函数
     sparkSession.udf.register("group_concat_distinct",new GroupConcatDistionct)
-    //通过group by area,product_id统计每个区域每个商品的点击次数和去重后的城市信息
+    //通过group by area,product_id统计每个区域每个商品的点击次数和去重后的城市
     getAreaProductClickCount(sparkSession)
     sparkSession.udf.register("get_json_value", (str:String, field:String) => {
       val jsonObject = JSONObject.fromObject(str)
