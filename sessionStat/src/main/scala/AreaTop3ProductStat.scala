@@ -41,7 +41,7 @@ object AreaTop3ProductStat {
     //统计每个区域每个商品的点击次数和去重后的城市信息与商品信息表关联拼接商品信息
     getProductInfo(sparkSession)
 //    sparkSession.sql("select * from tmp_area_product_click_count").show()
-//    通过窗口函数row_number() over(partition by area order by click_count desc) 获取各区域Top3商品
+//    通过窗口函数over partition
     getAreaTop3PopularProduct(sparkSession, taskUUID)
   }
 
